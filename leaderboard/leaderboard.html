@@ -6,9 +6,25 @@
   {{> leaderboard}}
 </body>
 <template name="leaderboard">
-  <ul>
+  <table>
+    <thead>
+      <th>Player</th>
+      <th>Score</th>
+    </thead>
+    <tbody>
   {{#each player}}
-    <li class='player {{selectedClass}}'>{{name}}: {{score}}</li>
+    <tr class='player {{selectedClass}}'>
+      <td>{{name}}</td>
+      <td>{{score}}</td>
+    </tr>
   {{/each}}
-  </ul>
+  </tbody>
+</table>
+{{> addPlayerForm}}
+</template>
+<template name="addPlayerForm">
+<form>
+  <input type="text" name="playerName">
+  <input type="submit" value="Add Player">
+</form>
 </template>
