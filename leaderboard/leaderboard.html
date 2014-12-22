@@ -10,14 +10,27 @@
     <thead>
       <th>Player</th>
       <th>Score</th>
+      <th>Delete</th>
     </thead>
     <tbody>
   {{#each player}}
     <tr class='player {{selectedClass}}'>
       <td>{{name}}</td>
       <td>{{score}}</td>
+      <td><input type="button" class="delete" value="Delete Player" /></td>
     </tr>
   {{/each}}
+  <tr>
+    <td>
+      <input type="button" class="increment" value="Give 5 Points" />
+    </td>
+    <td>
+      <input type="button" class="reset" value="Reset Points" />
+    </td>
+    <td>
+      <input type="button" class="decrement" value="Take 5 Points" />
+    </td>
+  </tr>
   </tbody>
 </table>
 {{> addPlayerForm}}
